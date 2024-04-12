@@ -104,3 +104,29 @@ p {
 .btn-home a {
     margin: 0 10px;
 }
+.carousel-inner {
+    max-height: 895px;
+}
+
+.carousel-caption h2 {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+.content {
+    height: 50vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sau {
+    background: url(puerto\ william\ general.webp) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 30px;
+    min-height: 100vh;
+}
