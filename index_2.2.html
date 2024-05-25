@@ -1,113 +1,96 @@
-<section class="content about" id="nosotros">
 
-        <h2 class="title">Nosotros</h2>
-        <p>
-            En Patagonia Travel, nos dedicamos a ofrecer experiencias turísticas auténticas 
-            y memorables en Puerto Williams y sus alrededores. Nuestro equipo de guías locales 
-            expertos está comprometido con la conservación del medio ambiente y la colaboración 
-            con las comunidades locales. Ya sea que busques aventuras en la montaña o tranquilos 
-            paseos costeros, en Patagonia Travel encontrarás la escapada perfecta para descubrir 
-            la magia de la Patagonia.
-        </p>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const discountModal = new bootstrap.Modal(document.getElementById('discountModal'), {
+            backdrop: 'static',
+            keyboard: false
+        });
+        discountModal.show();
 
-    </section> 
-    
-    <section class="content price" id="precio">
-        <article class="contain">
-            <h2 class="title">Precio</h2>
-            <div class="tour-info">
-                <h3>Tour de Gastronomía:</h3>
-                <p><strong>Descripción:</strong> Disfruta de una experiencia gastronómica única con platos tradicionales y delicias locales.</p>
-                <p><strong>Duración:</strong> 3 horas.</p>
-                <p><strong>Precio:</strong> 50.000 por persona.</p>
-            </div>
-            <div class="tour-info">
-                <h3>Tour de Caminata:</h3>
-                <p><strong>Descripción:</strong> Explora los senderos naturales de Puerto Williams y disfruta de vistas impresionantes.</p>
-                <p><strong>Duración:</strong> 4 horas.</p>
-                <p><strong>Precio:</strong> 40.000 por persona.</p>
-            </div>
-            <div class="tour-info">
-                <h3>Tour de Museo:</h3>
-                <p><strong>Descripción:</strong> Sumérgete en la historia y cultura de la región con una visita guiada al museo local.</p>
-                <p><strong>Duración:</strong> 2 horas.</p>
-                <p><strong>Precio:</strong> 30.000 por persona.</p>
-            </div>
-            <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Mas Informacion</a>
-        </article>
-    </section>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Precio</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-           
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-<section class="content contact" id="contacto">
-    <h2 class="title">Contacto</h2>
-    <div class="contact-info">
-        <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <p class="contact-detail">Teléfono: +56612362625</p>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <p class="contact-detail">Email: <a href="mailto:tuemail@example.com">Contacto@PatagoniaTravel.com</a></p>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <p class="contact-detail">Dirección: Av el pepino 365, Puerto Williams</p>
-        </div>
-    </div>
-</section>
-    
-    <script>
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+        function validateForm() {
+            let isValid = true;
+
+            const nameInput = document.getElementById('registerName');
+            const emailInput = document.getElementById('registerEmail');
+            const phoneInput = document.getElementById('registerPhone');
+
+            if (nameInput.value.trim().length < 2) {
+                nameInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                nameInput.classList.remove('is-invalid');
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(emailInput.value.trim())) {
+                emailInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('is-invalid');
+            }
+
+            const phonePattern = /^[0-9]{9,15}$/;
+            if (!phonePattern.test(phoneInput.value.trim())) {
+                phoneInput.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+            }
+
+            return isValid;
         }
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="discountModalLabel">Obtén Descuentos por Registrarte</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="discountForm">
-                    <div class="mb-3">
-                        <label for="registerName" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="registerName" required>
-                        <div class="invalid-feedback">El nombre debe contener al menos 2 caracteres.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerEmail" class="form-label">Correo Electrónico:</label>
-                        <input type="email" class="form-control" id="registerEmail" required>
-                        <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerPhone" class="form-label">Teléfono:</label>
-                        <input type="text" class="form-control" id="registerPhone" required>
-                        <div class="invalid-feedback">El teléfono debe contener solo números y tener entre 9 y 15 dígitos.</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+        document.getElementById('discountForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (validateForm()) {
+                const formData = new FormData(this);
+
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    discountModal.hide();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Hubo un problema con el registro.');
+                });
+            } else {
+                alert('Por favor, corrige los errores en el formulario.');
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://api.jsonbin.io/v3/qs/66511d73ad19ca34f86ea0ae')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const priceSection = document.querySelector('#precio .contain');
+                let htmlContent = `<h2 class="title">Tours por Puerto Williams</h2>`;
+
+                data.record.tours.forEach(tour => {
+                    htmlContent += `
+                        <div class="tour-info">
+                            <h3>${tour.nombre}:</h3>
+                            <p><strong>Descripción:</strong> ${tour.descripcion}</p>
+                            <p><strong>Duración:</strong> ${tour.duracion}</p>
+                            <p><strong>Precio:</strong> ${tour.precio} por persona.</p>
+                        </div>
+                    `;
+                });
+
+                priceSection.innerHTML = htmlContent;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+</script>
+</body>
+</html>
+
