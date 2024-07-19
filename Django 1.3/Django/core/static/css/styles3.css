@@ -1,0 +1,153 @@
+:root {
+    --bs-card-bg: #343a40; /* Define el color de fondo para las tarjetas */
+    color-scheme: dark; /* Informa al navegador que esta es una página oscura */
+}
+
+body {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+#custom-body {
+    background-color: #343a40 !important; /* Cambia el color de fondo del cuerpo */
+    color: white !important; /* Cambia el color del texto */
+}
+.card {
+    background-color: var(--bs-card-bg) !important;
+    color: white !important;
+    /* Otras propiedades de estilo para la tarjeta */
+}
+#card {
+    background-color: var(--bs-card-bg) !important;
+    color: white !important;
+    /* Otras propiedades de estilo para la tarjeta */
+}
+
+.head {
+    background-color: #212529 !important;
+}
+
+.navbar a {
+    color: white !important;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #495057 !important;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffc107 !important;
+}
+
+.card {
+    background-color: #495057 !important;
+    border: none !important;
+}
+
+.card h3 {
+    font-size: 1.5rem !important;
+    color: #ffc107 !important;
+}
+
+.card p, .card ul {
+    color: white !important;
+}
+
+.btn-outline-light {
+    color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    transition: background-color 0.3s !important;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+footer {
+    background-color: #212529 !important;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        bottom: 20% !important;
+    }
+    .carousel-caption h2 {
+        font-size: 3rem !important;
+    }
+}
+
+.modal-dialog.modal-sm {
+    max-width: 300px !important; 
+    margin: 1.75rem auto !important; 
+}
+
+.modal-content {
+    padding: 1500px !important; 
+}
+
+.modal-body {
+    padding: 50px !important; 
+    max-height: calc(100vh - 150px) !important; 
+    overflow-y: auto !important; 
+}
+
+/* Footer */
+footer {
+    background-color: #212529 !important;
+    color: #fff !important;
+    padding: 30px 0 !important;
+}
+
+footer h5 {
+    color: #ffc107 !important;
+}
+
+.social-icons a {
+    color: white !important;
+    font-size: 1.5rem !important;
+    margin-right: 15px !important;
+}
+
+.social-icons a:hover {
+    color: #ffc107 !important;
+}
+
+ul.list-unstyled {
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+ul.list-unstyled li {
+    margin-bottom: 10px !important;
+}
+
+ul.list-unstyled li i {
+    margin-right: 10px !important;
+}
+
+.banner {
+    background-color: #343a40 !important; 
+    color: white !important; 
+    padding: 50px 0 !important; 
+}
+
+.banner img {
+    margin-bottom: 20px !important; 
+}
+
+.banner-text {
+    font-size: 2rem !important; 
+    color: #ffc107 !important;  
+}
+
+@media (max-width: 768px) {
+    .banner-text {
+        font-size: 1.5rem !important; 
+    }
+}

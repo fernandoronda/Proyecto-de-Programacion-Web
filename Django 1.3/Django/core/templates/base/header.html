@@ -1,0 +1,39 @@
+
+{%load static%}
+<header class="head sticky-top">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="logo">
+            <a href="{% url 'index'%}" class="text-white fs-4">Patagonia Travel</a>
+        </div>
+        <nav class="navbar text-white">
+            <a href="{% url 'index'%}" class="text-white" onclick="scrollToTop()">Inicio</a>
+            <a href="#nosotros" class="text-white">Nosotros</a>
+            <a href="#contacto" class="text-white">Contacto</a>
+            <a href="#producto" class="text-white">Productos</a>
+            <a href="{% url 'catalogo'%}" class="text-white">Catalogo</a>
+            <a href="#testimonios" class="text-white">Testimonios</a>
+            <a href="#faq" class="text-white">FAQ</a>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'crud' %}">
+                    Perfil Mantenedor
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'carrito' %}">
+                    Carrito de Compras
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'logout' %}">
+                    Cerrar Sesión!
+                </a>
+            </li>
+            {% else %}
+            <button class="bg-danger"><a href="{% url 'login'%}" class="text-white">Iniciar Sesion MANTENEDOR</a></button>
+            {% endif %}
+            <button class="bg-primary"><a href="{% url 'iniciousuario'%}" class="text-white">Inicio Sesion Usuario</a></button>
+
+        </nav>
+    </div>
+</header>
